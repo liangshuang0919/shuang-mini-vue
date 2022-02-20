@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 视图节点 -->
+  <div id="app">
+    <!-- 文本节点 -->
+    <!-- 1. 普通文本 -->
+    普通文本：Hello My-mini-vue！
+    <!-- 2. 指令文本 -->
+    <br />这是 message1：{{ message1 }}
+
+    <br />这是 message2：{{ message2 }}
+
+    <!-- 元素节点 -->
+    <!-- 1. 差值表达式 -->
+    <p>{{ message1 }}</p>
+    <!-- 2. 指令 -->
+    <p v-text="message2"></p>
+
+    <!-- 检测 v-model 的效果 -->
+    <p>{{ message }}</p>
+    <p v-text="message"></p>
+    <input type="text" v-model="message">
+  </div>
+
+  <!-- 导入 Watcher 类 -->
+  <script src="./js/Watcher.js"></script>
+  <!-- 导入 Dep 类 -->
+  <script src="./js/Dep.js"></script>
+  <!-- 导入 Observer 类 -->
+  <script src="./js/Observer.js"></script>
+  <!-- 导入 Compiler 类 -->
+  <script src="./js/Compiler.js"></script>
+  <!-- 导入 Vue 类 -->
+  <script src="./js/Vue.js"></script>
+
+  <script>
+    // 初始化 vue 实例对象
+    const vm = new Vue({
+      // 挂载元素
+      el: "#app", // 通过 id 名获取
+      // el: document.getElementById("app"), // 通过节点元素获取
+      // 绑定数据
+      data: {
+        message: "Javascript",
+        message1: "Hello",
+        message2: "My-mini-vue",
+        arr: [1, 2, 3],
+        obj: {
+          name: "liangshuang",
+          age: 21,
+          info: {
+            height: 178,
+            weight: 160
+          }
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
